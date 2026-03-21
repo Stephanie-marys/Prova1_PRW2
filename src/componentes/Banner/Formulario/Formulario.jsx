@@ -1,62 +1,61 @@
-import React, { useState } from "react";
-import './Formulario.css';
-import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
-import CampoTexto from "../CampoTexto/CampoTexto";
-import Botao from "../Botao/botao";
+import { useState } from 'react';
 
-const Formulario = (props) => {
+const Formulario = ({ secoes, aoProdCadastrado }) => {
 
-    const marcas=[
-        'Dell',
-        'Asus',
-        'Positivo',
-        'Hp',
-        'Xing-ling'
-    ]
+  const [nome, setNome] = useState('');
+  const [preco, setPreco] = useState('');
+  const [imagem, setImagem] = useState('');
+  const [secao, setSecao] = useState('');
 
-    const [produto, setProduto] = useState('')
-    const [preco, setPreco] = useState('')
-    const [secao, setSecao] = useState('')
-    const [marca, setMarca] = useState('')
+  const aoSalvar = (e) => {
+    e.preventDefault();
 
-    const aoSalvar = (evento) => {
-        evento.preventDefault()
-        props.aoProdCadastrado({
-            "Produto": produto,
-            "Preço": preco,
-            "Seção": secao,
-            "Marca": marca
-        })
-    }
+    aoProdCadastrado({
+      nome,
+      preco,
+      imagem,
+      secao
+    });
 
-    return (
-        <section className="formulario">
-            <form onSubmit={aoSalvar}>
-                <h2>Dados do produto:</h2>
-                <CampoTexto 
-                    label="Produto" 
-                    placeholder="Informe o produto"
-                    valor={produto}
-                    aoAlterado={valor => setProduto(valor)}/>
-                <CampoTexto 
-                    label="Preço" 
-                    placeholder="Informe o preço"
-                    valor={preco}
-                    aoAlterado={valor => setPreco(valor)}/>
-                <ListaSuspensa 
-                    label="Seções" 
-                    itens={props.secao}
-                    valor={secao}
-                    aoAlterado={valor => setSecao(valor)}/>
-                <ListaSuspensa 
-                    label="Marca"
-                    itens={marcas}
-                    valor={marca}
-                    aoAlterado={valor => setMarca(valor)}/>
-                <Botao>Salvar Produto</Botao>
-            </form>
-        </section>
-    )
-}
+    setNome('');
+    setPreco('');
+    setImagem('');
+    setSecao('');
+  };
+
+  return (
+    <form onSubmit={aoSalvar}>
+      <input 
+        value={nome}
+        onChange={e => setNome(e.target.value)}
+        placeholder="Nome"
+      />
+
+      <input 
+        value={preco}
+        onChange={e => setPreco(e.target.value)}
+        placeholder="Preço"
+      />
+
+      <input 
+        value={imagem}
+        onChange={e => setImagem(e.target.value)}
+        placeholder="Imagem"
+      />
+
+      <select 
+        value={secao}
+        onChange={e => setSecao(e.target.value)}
+      >
+        <option value="">Selecione uma seção</option>
+        {secoes.map(s => (
+          <option key={s} value={s}>{s}</option>
+        ))}
+      </select>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  );
+};
 
 export default Formulario;

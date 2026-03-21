@@ -1,0 +1,10 @@
+section {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.produtos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
