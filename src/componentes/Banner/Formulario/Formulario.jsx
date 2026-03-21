@@ -6,14 +6,6 @@ import Botao from "../Botao/botao";
 
 const Formulario = (props) => {
 
-    const secoes=[
-        'Computadores',
-        'Acessórios',
-        'Impressoras',
-        'Games',
-        'Gadgets'
-    ]
-
     const marcas=[
         'Dell',
         'Asus',
@@ -53,7 +45,7 @@ const Formulario = (props) => {
                     aoAlterado={valor => setPreco(valor)}/>
                 <ListaSuspensa 
                     label="Seções" 
-                    itens={secoes}
+                    itens={props.secao}
                     valor={secao}
                     aoAlterado={valor => setSecao(valor)}/>
                 <ListaSuspensa 
