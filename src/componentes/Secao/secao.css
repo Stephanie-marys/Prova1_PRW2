@@ -1,0 +1,18 @@
+/* src/componentes/Secao/Secao.css */
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+section h3 {
+  border-left: 4px solid;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}

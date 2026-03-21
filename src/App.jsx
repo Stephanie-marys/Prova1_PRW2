@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import Banner from './componentes/Banner/Banner';
-import Formulario from './componentes/Banner/Formulario/Formulario';
-import Secao from './componentes/Secao/secao';
+import Formulario from './componentes/Formulario/Formulario';
+import Secao from './componentes/Secao/Secao';
 
 function App() {
 
