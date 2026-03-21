@@ -34,6 +34,7 @@ function App() {
           nome={secao.nome}
           corPrimaria={secao.corPrimaria}       
           corSegundaria={secao.corSegundaria}
+          marca={marca}
         />
       ))}
     </div>
