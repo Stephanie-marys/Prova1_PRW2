@@ -1,22 +1,23 @@
 .secao {
-  padding: 24px 40px;
-  margin: 16px 0;
+  padding: 40px;
+  margin: 0;
 }
 
 .secao-titulo {
-  border-left: 6px solid;
-  padding-left: 12px;
-  margin-bottom: 20px;
-  font-size: 1.3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid;
+  display: inline-block;
+  width: 100%;
 }
 
 .produtos {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-}
-
-.secao-vazia {
-  color: #999;
-  font-style: italic;
+  justify-content: center;
+  gap: 30px;
 }

@@ -12,7 +12,7 @@ const Secao = ({ nome, corPrimaria, corSecundaria, produtos }) => {
         {produtos.length === 0
           ? <p className="secao-vazia">Nenhum produto nesta seção.</p>
           : produtos.map((produto, i) => (
-              <ProdutoCard key={i} {...produto} />
+              <Produtos key={i} {...produto} />
             ))
         }
       </div>

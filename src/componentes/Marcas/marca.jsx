@@ -1,14 +1,14 @@
 import './marca.css';
 
 const logosLocais = {
-  HP:          '/imagens/hp.png',
-  Dell:        '/imagens/dell.png',
-  Positivo:    '/imagens/positivo.png',
-  Asus:        '/imagens/asus.png',
+  'HP':'/imagens/hp.png',
+  'Dell':'/imagens/dell.png',
+  'Positivo':'/imagens/positivo.png',
+  'Asus': '/imagens/asus.png',
   'Xing Ling': '/imagens/xing.png',
 };
 
-const ProdutoCard = ({ nome, preco, marca, condicao }) => {
+const Produtos = ({ nome, preco, marca, condicao }) => {
   return (
     <div className="card">
       <img
@@ -25,4 +25,4 @@ const ProdutoCard = ({ nome, preco, marca, condicao }) => {
   );
 };
 
-export default ProdutoCard;
+export default Produtos;

@@ -20,33 +20,45 @@
   padding: 6px;
 }
 
+.card {
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  padding: 4px;
+}
+
 .card-nome {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: #57c278;
   margin: 0;
 }
 
 .card-preco {
   font-size: 1rem;
   font-weight: bold;
-  color: #57c278;
+  color: #333;
   margin: 0;
 }
 
 .card-condicao {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  padding: 2px 10px;
-  border-radius: 20px;
-}
-
-.card-condicao.novo {
-  background-color: #d9f7e9;
-  color: #57c278;
-}
-
-.card-condicao.usado {
-  background-color: #fdebd9;
-  color: #e07a39;
+  color: #333;
+  margin: 0;
 }
