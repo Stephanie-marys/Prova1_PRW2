@@ -1,26 +1,28 @@
 import './marca.css';
 
-const Produtos = ({ nome, preco, marca, condicao }) => {
+const logosLocais = {
+  HP:          '/imagens/hp.png',
+  Dell:        '/imagens/dell.png',
+  Positivo:    '/imagens/positivo.png',
+  Asus:        '/imagens/asus.png',
+  'Xing Ling': '/imagens/xing.png',
+};
 
-  const imagens = {
-    HP: "https://logo.clearbit.com/hp.com",
-    Dell: "https://logo.clearbit.com/dell.com",
-    Asus: "https://logo.clearbit.com/asus.com",
-    Positivo: "https://logo.clearbit.com/positivo.com.br",
-    "Xing Ling": "https://via.placeholder.com/100"
-  };
-
+const ProdutoCard = ({ nome, preco, marca, condicao }) => {
   return (
     <div className="card">
-
-      <img src={imagens[marca]} alt={marca} />
-
-      <h4>{nome}</h4>
-      <p>R$ {preco}</p>
-      <span>{condicao}</span>
-
+      <img
+        src={logosLocais[marca]}
+        alt={marca}
+        className="card-logo"
+      />
+      <h4 className="card-nome">{nome}</h4>
+      <p className="card-preco">R$ {Number(preco).toFixed(2)}</p>
+      <span className={`card-condicao ${condicao === 'Novo' ? 'novo' : 'usado'}`}>
+        {condicao}
+      </span>
     </div>
   );
 };
 
-export default Produtos;
+export default ProdutoCard;

@@ -8,13 +8,15 @@ function App() {
 
   const secoes = [
     { nome: "Computadores", corPrimaria: '#57c278', corSecundaria: '#d9f7e9' },
-    { nome: "Acessórios", corPrimaria: '#82cffa', corSecundaria: '#e8f8ff' },
-    { nome: "Impressoras", corPrimaria: '#e06b69', corSecundaria: '#fde7e8' },
-    { nome: "Games", corPrimaria: '#eea569', corSecundaria: '#fdebd9' },
-    { nome: "Gadgets", corPrimaria: '#f08cda', corSecundaria: '#fce4f6' },
+    { nome: "Acessórios",   corPrimaria: '#82cffa', corSecundaria: '#e8f8ff' },
+    { nome: "Impressoras",  corPrimaria: '#e06b69', corSecundaria: '#fde7e8' },
+    { nome: "Games",        corPrimaria: '#eea569', corSecundaria: '#fdebd9' },
+    { nome: "Gadgets",      corPrimaria: '#f08cda', corSecundaria: '#fce4f6' },
   ];
 
-  const listaSecoes = secoes.map(secao => secao.nome);
+  const marcas = ['HP', 'Dell', 'Positivo', 'Asus', 'Xing Ling'];
+
+  const listaSecoes = secoes.map(s => s.nome);
 
   const [produtos, setProdutos] = useState([]);
 
@@ -25,10 +27,11 @@ function App() {
   return (
     <div>
       <Banner />
-      
-      <Formulario 
-        secoes={listaSecoes} 
-        aoProdCadastrado={adicionaProd} 
+
+      <Formulario
+        secoes={listaSecoes}
+        marcas={marcas}
+        aoProdCadastrado={adicionaProd}
       />
 
       {secoes.map((secao) => (

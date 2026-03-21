@@ -2,7 +2,7 @@ import Produtos from "./Produtos";
 
 import './Produtos.css';
 
-const Produtos = ({ nome, preco, imagem, secao }) => {
+const Prods = ({ nome, preco, imagem, secao }) => {
   return (
     <div className="produto-card">
       {imagem && <img src={imagem} alt={nome} />}
@@ -13,4 +13,4 @@ const Produtos = ({ nome, preco, imagem, secao }) => {
   );
 };
 
-export default Produtos;
+export default Prods;
