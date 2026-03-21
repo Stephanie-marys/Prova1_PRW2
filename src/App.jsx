@@ -1,10 +1,19 @@
 import './App.css'
+import Banner from './componentes/Banner/Banner';
+import Formulario from './componentes/Banner/Formulario/Formulario';
 
 function App() {
 
 
   return (
-    <div>Prova 1</div>
+    <div>
+
+        <Banner/>
+        <Formulario/>
+
+    
+    </div>
+    
   );
 }
 
