@@ -3,22 +3,30 @@ import './Formulario.css';
 
 const Formulario = ({ secoes, marcas, aoProdCadastrado }) => {
 
-  const [nome,     setNome]     = useState('');
-  const [preco,    setPreco]    = useState('');
-  const [secao,    setSecao]    = useState('');
-  const [marca,    setMarca]    = useState('');
-  const [condicao, setCondicao] = useState('Novo');
+  const [nome,        setNome]        = useState('');
+  const [preco,       setPreco]       = useState('');
+  const [secao,       setSecao]       = useState('');
+  const [marca,       setMarca]       = useState('');
+  const [imagemMarca, setImagemMarca] = useState('');
+  const [condicao,    setCondicao]    = useState('Novo');
+
+  const aoSelecionarMarca = (valor) => {
+    setMarca(valor);
+    const marcaSelecionada = marcas.find(m => m.marca === valor);
+    setImagemMarca(marcaSelecionada ? marcaSelecionada.imagem : '');
+  };
 
   const aoSalvar = (e) => {
     e.preventDefault();
     if (!nome || !preco || !secao || !marca) return;
 
-    aoProdCadastrado({ nome, preco, secao, marca, condicao });
+    aoProdCadastrado({ nome, preco, secao, marca, imagem: imagemMarca, condicao });
 
     setNome('');
     setPreco('');
     setSecao('');
     setMarca('');
+    setImagemMarca('');
     setCondicao('Novo');
   };
 
@@ -39,10 +47,10 @@ const Formulario = ({ secoes, marcas, aoProdCadastrado }) => {
 
         <div className="campo">
           <label>Marca:</label>
-          <select value={marca} onChange={e => setMarca(e.target.value)} required>
+          <select value={marca} onChange={e => aoSelecionarMarca(e.target.value)} required>
             <option value="">Selecione uma marca</option>
             {marcas.map(m => (
-              <option key={m} value={m}>{m}</option>
+              <option key={m.marca} value={m.marca}>{m.marca}</option>
             ))}
           </select>
         </div>

@@ -4,6 +4,7 @@ import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario/Formulario';
 import Secao from './componentes/Secao/Secao';
 
+
 function App() {
 
   const secoes = [
@@ -14,7 +15,13 @@ function App() {
     { nome: "Gadgets",      corPrimaria: '#f08cda', corSecundaria: '#fce4f6' },
   ];
 
-  const marcas = ['HP', 'Dell', 'Positivo', 'Asus', 'Xing Ling'];
+  const marcas = [
+    { marca: 'HP',        imagem: '/imagens/hp.png' },
+    { marca: 'Dell',      imagem: '/imagens/dell.png' },
+    { marca: 'Positivo',  imagem: '/imagens/positivo.png' },
+    { marca: 'Asus',      imagem: '/imagens/asus.png' },
+    { marca: 'Xing Ling', imagem: '/imagens/xing.png' },
+  ];
 
   const listaSecoes = secoes.map(s => s.nome);
 
